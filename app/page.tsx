@@ -12,7 +12,7 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8 tracking-tight">
-                  Rota ABC – Devolvendo ao lojista o que é{' '}
+                  Devolvendo ao lojista o que é{' '}
                   <span className="text-orange-500">dele por direito</span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed font-light">
