@@ -34,12 +34,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
-      <body className="font-sans bg-slate-50 text-slate-800 antialiased">
       <body className="font-sans bg-white text-gray-900 antialiased">
         {children}
       </body>
     </html>
   );
-}
-  )
 }
