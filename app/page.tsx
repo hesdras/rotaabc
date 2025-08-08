@@ -1,322 +1,184 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, XCircle, ArrowRight, Users, MapPin, Zap, TrendingUp, Shield, Heart } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowRight, Users, MapPin, Zap, TrendingUp, Shield, Heart, Star, Award, Target } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-8 bg-gray-900 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xs font-bold">ABC</span>
+              </div>
+              <span className="font-bold text-gray-900">Rota ABC</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#como-funciona" className="text-gray-600 hover:text-gray-900 transition-colors">Como Funciona</a>
+              <a href="#beneficios" className="text-gray-600 hover:text-gray-900 transition-colors">Benefícios</a>
+              <a href="#rede" className="text-gray-600 hover:text-gray-900 transition-colors">A Rede</a>
+              <a href="#contato" className="text-gray-600 hover:text-gray-900 transition-colors">Contato</a>
+            </div>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+              Participar da Rota
+            </Button>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-24 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8 tracking-tight">
-                  Devolvendo ao lojista o que é{' '}
-                  <span className="text-orange-500">dele por direito</span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed font-light">
-                  Uma rede digital local que elimina os intermediários e devolve a conexão entre comerciantes e consumidores.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
-                  >
-                    Quero Participar da Rota
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200"
-                  >
-                    Como Funciona
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-                  <div className="aspect-video bg-gray-50 rounded-xl mb-6 flex items-center justify-center">
-                    <div className="text-gray-400 text-center">
-                      <MapPin className="h-12 w-12 mx-auto mb-2" />
-                      <span className="text-sm">Mockup da Plataforma</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="h-10 w-10 bg-gray-900 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">ABC</span>
-                    </div>
-                    <span className="font-semibold text-gray-900">Sua Loja na Rota ABC</span>
-                  </div>
-                  <p className="text-sm text-gray-500">Página própria • Reputação compartilhada • Zero comissões</p>
-                </div>
-              </div>
+      <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="max-w-4xl">
+            <h1 className="text-6xl lg:text-8xl font-bold text-white leading-tight mb-8 tracking-tight">
+              PRONTOS PARA O
+              <br />
+              <span className="text-orange-500">FUTURO</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed font-light max-w-2xl">
+              Uma rede digital local que elimina os intermediários e devolve a conexão entre comerciantes e consumidores do ABC Paulista.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200"
+              >
+                Quero Participar da Rota
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200"
+              >
+                Saiba Mais
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problema e Solução */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              O Jogo Mudou
-            </h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Problemas */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <XCircle className="h-7 w-7 text-red-500" />
-                Marketplaces Tradicionais
-              </h3>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-red-50 rounded-full flex items-center justify-center">
-                    <span className="text-red-500 text-sm">✕</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Roubo de margem</h4>
-                    <p className="text-gray-600">Comissões que chegam a 20% do faturamento</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-red-50 rounded-full flex items-center justify-center">
-                    <span className="text-red-500 text-sm">✕</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Controle da reputação</h4>
-                    <p className="text-gray-600">Sua marca fica refém das regras da plataforma</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-red-50 rounded-full flex items-center justify-center">
-                    <span className="text-red-500 text-sm">✕</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Cliente vira lead deles</h4>
-                    <p className="text-gray-600">Você perde o relacionamento direto com quem compra</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Solução */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <CheckCircle className="h-7 w-7 text-green-500" />
-                Solução Rota ABC
-              </h3>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-50 rounded-full flex items-center justify-center">
-                    <span className="text-green-500 text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Página própria com reputação compartilhada</h4>
-                    <p className="text-gray-600">Sua marca protegida dentro de um ecossistema confiável</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-50 rounded-full flex items-center justify-center">
-                    <span className="text-green-500 text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Custo de aquisição menor</h4>
-                    <p className="text-gray-600">Taxa fixa mensal, sem comissões sobre vendas</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-50 rounded-full flex items-center justify-center">
-                    <span className="text-green-500 text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Fidelização com marca local</h4>
-                    <p className="text-gray-600">Relacionamento direto e duradouro com seus clientes</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Como Funciona */}
+      {/* Somos a Embraer Section - Adapted */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              Sua Loja. Sua Página. Sua Reputação.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="h-7 w-7 text-white" />
-              </div>
-              <div className="bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">01</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Você adere à Rota ABC</h3>
-              <p className="text-gray-600">Processo simples de cadastro e integração à rede local</p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
+                SOMOS A
+                <br />
+                <span className="text-orange-500">ROTA ABC</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Há décadas, os comerciantes do ABC Paulista construíram a confiança da comunidade local. 
+                Agora é hora de digitalizar essa força, criando uma rede que valoriza o que já existe: 
+                a reputação conquistada no mundo real.
+              </p>
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3">
+                Nossa História
+              </Button>
             </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Zap className="h-7 w-7 text-white" />
+            <div className="relative">
+              <div className="aspect-video bg-gray-100 rounded-2xl overflow-hidden">
+                <div className="h-full flex items-center justify-center text-gray-400">
+                  <MapPin className="h-16 w-16" />
+                </div>
               </div>
-              <div className="bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">02</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Criamos sua página</h3>
-              <p className="text-gray-600">Página de vendas profissional dentro do domínio rotaabc.com.br</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="h-7 w-7 text-white" />
-              </div>
-              <div className="bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">03</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Você divulga como quiser</h3>
-              <p className="text-gray-600">QR code, Instagram, WhatsApp - todos os canais levam para sua página</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-7 w-7 text-white" />
-              </div>
-              <div className="bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">04</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Reputação coletiva</h3>
-              <p className="text-gray-600">Mais tráfego e conversões através da confiança compartilhada</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefícios */}
+      {/* Grid Section - 4 Cards */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              O Que Você Ganha
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <Heart className="h-6 w-6 text-orange-500" />
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="group cursor-pointer overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-600 to-blue-800">
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-8 left-8 text-white">
+                  <h3 className="text-2xl font-bold mb-2">AVIAÇÃO COMERCIAL</h3>
+                  <p className="text-blue-100">Conectando o mundo</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Conexão direta com o cliente final</h3>
-                <p className="text-gray-600">Relacionamento sem intermediários, construindo fidelidade real</p>
-              </CardContent>
+              </div>
             </Card>
 
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <MapPin className="h-6 w-6 text-orange-500" />
+            <Card className="group cursor-pointer overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-700 to-gray-900">
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-8 left-8 text-white">
+                  <h3 className="text-2xl font-bold mb-2">AVIAÇÃO EXECUTIVA</h3>
+                  <p className="text-gray-100">Excelência em voo</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Valorização da sua marca local</h3>
-                <p className="text-gray-600">Destaque na comunidade do ABC através da identidade regional</p>
-              </CardContent>
+              </div>
             </Card>
 
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="h-6 w-6 text-orange-500" />
+            <Card className="group cursor-pointer overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-green-600 to-green-800">
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-8 left-8 text-white">
+                  <h3 className="text-2xl font-bold mb-2">DEFESA & SEGURANÇA</h3>
+                  <p className="text-green-100">Proteção e tecnologia</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Reputação desde o primeiro dia</h3>
-                <p className="text-gray-600">Beneficie-se da confiança coletiva da rede desde o início</p>
-              </CardContent>
+              </div>
             </Card>
 
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <TrendingUp className="h-6 w-6 text-orange-500" />
+            <Card className="group cursor-pointer overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-orange-500 to-orange-700">
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-8 left-8 text-white">
+                  <h3 className="text-2xl font-bold mb-2">SERVIÇOS & SUPORTE</h3>
+                  <p className="text-orange-100">Apoio completo</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Redução no gasto com tráfego pago</h3>
-                <p className="text-gray-600">Menos dependência de anúncios pagos para atrair clientes</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <Zap className="h-6 w-6 text-orange-500" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Mais margem, menos intermediários</h3>
-                <p className="text-gray-600">Mantenha sua rentabilidade sem abrir mão das vendas digitais</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                  <Users className="h-6 w-6 text-orange-500" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Rede de apoio local</h3>
-                <p className="text-gray-600">Faça parte de um movimento que fortalece o comércio regional</p>
-              </CardContent>
+              </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Estrutura de Rede */}
+      {/* Innovation Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              Mais que uma página. Um ecossistema.
-            </h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">DUDONO</h3>
-                    <p className="text-lg text-gray-600 font-light">A empresa que estrutura e mantém a rede descentralizada, garantindo tecnologia e governança.</p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+                  <div className="h-full flex items-center justify-center text-gray-400">
+                    <Users className="h-12 w-12" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">ROTA ABC</h3>
-                    <p className="text-lg text-gray-600 font-light">O nó da rede dedicado ao ABC Paulista, conectando comerciantes e consumidores da região.</p>
+                </div>
+                <div className="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+                  <div className="h-full flex items-center justify-center text-gray-400">
+                    <Shield className="h-12 w-12" />
                   </div>
                 </div>
               </div>
-              <div>
-                <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
-                  <div className="space-y-6">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white font-bold text-lg">DUDONO</span>
-                      </div>
-                      <p className="text-sm text-gray-500">Rede Descentralizada</p>
-                    </div>
-                    <div className="flex justify-center">
-                      <div className="w-px h-8 bg-gray-300"></div>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white font-bold">ABC</span>
-                      </div>
-                      <p className="text-sm text-gray-500">Nó Regional</p>
-                    </div>
-                    <div className="flex justify-center">
-                      <div className="w-px h-8 bg-gray-300"></div>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2">
-                      <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
-                      <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
-                      <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
-                    </div>
-                    <p className="text-xs text-gray-400 text-center">Lojistas Conectados</p>
-                  </div>
+            </div>
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
+                IMPULSIONADA PELA
+                <br />
+                <span className="text-orange-500">INOVAÇÃO</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Nossa plataforma utiliza tecnologia de ponta para criar uma rede descentralizada 
+                que fortalece o comércio local. Cada lojista mantém sua identidade única enquanto 
+                se beneficia da força coletiva da comunidade ABC.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-700">Tecnologia blockchain para transparência</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-700">Sistema de reputação compartilhada</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-700">Integração com sistemas existentes</span>
                 </div>
               </div>
             </div>
@@ -324,89 +186,238 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Oferta Comercial */}
+      {/* Sustainability Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
+                LIDERANDO A
+                <br />
+                AVIAÇÃO
+                <br />
+                <span className="text-orange-500">SUSTENTÁVEL</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Comprometidos com o futuro do planeta, desenvolvemos soluções que reduzem 
+                o impacto ambiental sem comprometer a performance. Nossa visão é liderar 
+                a transformação para uma aviação mais limpa e eficiente.
+              </p>
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3">
+                Sustentabilidade
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 rounded-2xl overflow-hidden">
+                <div className="h-full flex items-center justify-center text-green-600">
+                  <Zap className="h-16 w-16" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
       <section className="py-24 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">
-            Tudo isso por R$329/mês — sem comissões, sem amarras.
-          </h2>
-          
-          <div className="max-w-2xl mx-auto mb-12">
-            <ul className="text-lg text-gray-300 space-y-3 font-light">
-              <li>✓ Página de vendas profissional</li>
-              <li>✓ Integração com sistemas de pagamento</li>
-              <li>✓ Suporte técnico dedicado</li>
-              <li>✓ Reputação coletiva da rede</li>
-              <li>✓ Marketing regional compartilhado</li>
-            </ul>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <blockquote className="text-2xl lg:text-3xl font-light text-white leading-relaxed mb-8">
+            "A EMBRAER ESTÁ ENTRE AS DUAS MAIORES EMPRESAS DE AVIAÇÃO COMERCIAL DO MUNDO, 
+            SENDO LÍDER NO MERCADO DE AERONAVES DE ATÉ 150 ASSENTOS. SOMOS A TERCEIRA MAIOR 
+            PRODUTORA DE JATOS EXECUTIVOS E TEMOS FORTE ATUAÇÃO NOS MERCADOS DE DEFESA E 
+            SEGURANÇA E AVIAÇÃO AGRÍCOLA."
+          </blockquote>
+          <div className="w-16 h-px bg-orange-500 mx-auto"></div>
+        </div>
+      </section>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              Falar com um especialista
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg rounded-lg font-medium transition-all duration-200"
-            >
-              Começar agora
-            </Button>
+      {/* Other Business Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              OUTROS NEGÓCIOS
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
+              <div className="aspect-video bg-gradient-to-br from-green-500 to-green-700 rounded-t-xl">
+                <div className="h-full flex items-center justify-center text-white">
+                  <Target className="h-12 w-12" />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AVIAÇÃO AGRÍCOLA</h3>
+                <p className="text-gray-600 mb-4">Soluções especializadas para o agronegócio brasileiro</p>
+                <Button variant="outline" size="sm">Saiba mais</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
+              <div className="aspect-video bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-xl">
+                <div className="h-full flex items-center justify-center text-white">
+                  <Award className="h-12 w-12" />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">SISTEMAS EMBARCADOS</h3>
+                <p className="text-gray-600 mb-4">Tecnologia avançada para sistemas críticos</p>
+                <Button variant="outline" size="sm">Saiba mais</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
+              <div className="aspect-video bg-gradient-to-br from-purple-500 to-purple-700 rounded-t-xl">
+                <div className="h-full flex items-center justify-center text-white">
+                  <Star className="h-12 w-12" />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">URBAN MOBILITY</h3>
+                <p className="text-gray-600 mb-4">O futuro da mobilidade urbana sustentável</p>
+                <Button variant="outline" size="sm">Saiba mais</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Manifesto */}
-      <section className="py-24 bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">
-            Chegou a hora da Rota ABC
-          </h2>
-          <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
-            É uma nova internet para o comércio real — feita de empresas verdadeiras, 
-            que já têm a confiança da sua comunidade.
-          </p>
+      {/* Careers Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              CARREIRAS
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-orange-500 border-0 rounded-xl overflow-hidden">
+              <CardContent className="p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">OPORTUNIDADES</h3>
+                <p className="text-orange-100 mb-6">Faça parte do futuro da aviação</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
+                  Ver vagas
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-blue-600 border-0 rounded-xl overflow-hidden">
+              <CardContent className="p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">FORNECEDORES</h3>
+                <p className="text-blue-100 mb-6">Seja nosso parceiro de negócios</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                  Cadastre-se
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-green-600 border-0 rounded-xl overflow-hidden">
+              <CardContent className="p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">INVESTIDORES</h3>
+                <p className="text-green-100 mb-6">Informações para investidores</p>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+                  Acessar
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              ÚLTIMAS NOTÍCIAS
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <Card key={item} className="border-gray-200 rounded-xl bg-white hover:shadow-lg transition-shadow duration-200">
+                <div className="aspect-video bg-gray-100 rounded-t-xl">
+                  <div className="h-full flex items-center justify-center text-gray-400">
+                    <MapPin className="h-8 w-8" />
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="text-sm text-gray-500 mb-2">15 de Janeiro, 2024</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    Embraer anuncia nova parceria estratégica
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Acordo visa expandir presença no mercado internacional...
+                  </p>
+                  <Button variant="outline" size="sm">Ler mais</Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-12">
+      <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-8 w-8 bg-gray-900 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center">
                   <span className="text-white text-xs font-bold">ABC</span>
                 </div>
-                <span className="font-bold text-gray-900">Rota ABC</span>
+                <span className="font-bold text-white">Rota ABC</span>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-400 mb-6">
                 Rede digital local do ABC Paulista para comerciantes que querem crescer sem intermediários.
               </p>
+              <div className="flex space-x-4">
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-xs">f</span>
+                </div>
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-xs">t</span>
+                </div>
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-xs">in</span>
+                </div>
+              </div>
             </div>
+            
             <div>
-              <h4 className="font-bold text-gray-900 mb-4">Contato</h4>
-              <div className="space-y-2 text-gray-600">
+              <h4 className="font-bold text-white mb-4">Empresa</h4>
+              <div className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Sobre nós</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Nossa história</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Liderança</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Carreiras</a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-bold text-white mb-4">Produtos</h4>
+              <div className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Aviação comercial</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Aviação executiva</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Defesa & segurança</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Serviços</a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-bold text-white mb-4">Contato</h4>
+              <div className="space-y-2 text-gray-400">
                 <p>contato@rotaabc.com.br</p>
                 <p>(11) 9999-9999</p>
                 <p>ABC Paulista, SP</p>
               </div>
             </div>
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Rede</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">Sobre a DUDONO</a>
-                <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">Como funciona a rede</a>
-                <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">Termos de uso</a>
-                <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">Política de privacidade</a>
-              </div>
-            </div>
           </div>
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-            <p className="text-gray-600">
+          
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-400">
               © 2024 Rota ABC. Uma iniciativa da rede DUDONO. Todos os direitos reservados.
             </p>
           </div>
